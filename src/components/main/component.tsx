@@ -66,7 +66,7 @@ function TypedCaptions({ intl, pluginApi, uuid }: TypedCaptionsProps): React.Rea
       let captionLocaleFromMenus = '';
       if (captionLocale === '') {
         captionMenusResponseFromDataChannel?.data?.forEach((item) => {
-          if (item.fromUserId === currentUserResponse?.data?.userId) {
+          if (item.createdBy === currentUserResponse?.data?.userId) {
             setCaptionLocale(item.payloadJson.captionLocale);
             captionLocaleFromMenus = item.payloadJson.captionLocale;
           }
